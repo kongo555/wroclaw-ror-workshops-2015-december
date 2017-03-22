@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20150719115626) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "student_id"
     t.integer  "teacher_id"
   end
 
@@ -73,7 +72,6 @@ ActiveRecord::Schema.define(version: 20150719115626) do
   add_foreign_key "participations", "subject_items"
   add_foreign_key "subject_item_notes", "students"
   add_foreign_key "subject_item_notes", "subject_items"
-  add_foreign_key "subject_items", "students"
   add_foreign_key "subject_items", "teachers"
 
   add_index "participations", ["student_id"], name: "index_participations_on_student_id", using: :btree
@@ -82,7 +80,6 @@ ActiveRecord::Schema.define(version: 20150719115626) do
   add_index "subject_item_notes", ["student_id"], name: "index_subject_item_notes_on_student_id", using: :btree
   add_index "subject_item_notes", ["subject_item_id"], name: "index_subject_item_notes_on_subject_item_id", using: :btree
 
-  add_index "subject_items", ["student_id"], name: "index_subject_items_on_student_id", using: :btree
   add_index "subject_items", ["teacher_id"], name: "index_subject_items_on_teacher_id", using: :btree
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

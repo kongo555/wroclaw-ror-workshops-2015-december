@@ -7,7 +7,6 @@ RSpec.describe SubjectItem do
 
   describe 'database columns' do
     it { should have_db_column :title }
-    it { should have_db_column :student_id }
     it { should have_db_column :teacher_id }
   end
 
