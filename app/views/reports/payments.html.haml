@@ -1,0 +1,12 @@
+- breadcrumb :payments
+.payments
+  %h2 List of payments:
+  %table#paymentsTable
+    %thead
+      %tr
+        %th= t('payments.columns.first_name')
+        %th= t('payments.columns.last_name')
+        %th= t('payments.columns.date_of_payment')
+        %th= t('payments.columns.payment_deadline')
+    %tbody
+      = render payments

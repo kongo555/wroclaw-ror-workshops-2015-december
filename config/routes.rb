@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/report/subjects', to: 'reports#subjects' do
     get :subjects
   end
+  get '/report/payments', to: 'reports#payments'
 end

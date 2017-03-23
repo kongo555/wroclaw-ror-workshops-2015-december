@@ -1,8 +1,7 @@
 puts "Seeds: start"
 TEACHER_TITLES = %w(Dr. Prof. TA)
-User.create!(email: 'admin@admin.com',password: 'adminadmin')
 
-30.times do
+3.times do
   Teacher.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -11,17 +10,22 @@ User.create!(email: 'admin@admin.com',password: 'adminadmin')
 end
 
 teachers = Teacher.all
-20.times do
+5.times do
   SubjectItem.create!(
     title: Faker::Lorem.sentence,
     teacher: teachers.sample
   )
 end
 
-40.times do
+25.times do
+  birthdate = ""
+  if rand(1..10) > 3
+    birthdate = Faker::Date.birthday(9, 30)
+  end
   Student.create!(
     first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name
+    last_name: Faker::Name.last_name,
+    birthdate: birthdate
   )
 end
 
@@ -38,6 +42,14 @@ SubjectItem.all.each do |subject_item|
                                                                 value: rand(1..6))
     end
   end
+end
+
+students.each do |student|
+  date_of_payment = ""
+  if rand(1..10) > 4
+    date_of_payment = Faker::Date.between(22.days.ago, Date.today)
+  end
+  Payment.create!(student: student, date_of_payment:date_of_payment, payment_deadline: "2017-04-01")
 end
 
 puts "Seeds: done"

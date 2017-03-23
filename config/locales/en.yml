@@ -4,6 +4,7 @@ en:
     teachers: Teachers
     reports: Reports
     reports_subjects: Subjects
+    reports_payments: Payments
     logout: Logout
     signin: Sign in
     signup: Sign up
@@ -34,3 +35,9 @@ en:
       full_name: Full name
       birthdate: Birth date
       avg_notes: Average notes
+  payments:
+    columns:
+      first_name: First name
+      last_name: Last name
+      date_of_payment: Date of payment
+      payment_deadline: Payment deadline
