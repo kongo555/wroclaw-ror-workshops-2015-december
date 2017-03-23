@@ -32,4 +32,5 @@ en:
   subjects:
     columns:
       full_name: Full name
+      birthdate: Birth date
       avg_notes: Average notes
