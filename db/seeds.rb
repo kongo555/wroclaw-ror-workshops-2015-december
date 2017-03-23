@@ -31,12 +31,12 @@ end
 
 students = Student.all
 SubjectItem.all.each do |subject_item|
-  subject_item.students << students.sample(rand(1..4))
+  subject_item.students << students.sample(rand(4..8))
 end
 
 SubjectItem.all.each do |subject_item|
   subject_item.students.each do |student|
-    rand(1..5).times do
+    rand(2..5).times do
       subject_item.subject_item_notes << SubjectItemNote.create(student: student,
                                                                 subject_item: subject_item,
                                                                 value: rand(1..6))

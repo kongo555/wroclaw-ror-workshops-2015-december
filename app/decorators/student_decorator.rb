@@ -4,14 +4,15 @@ class StudentDecorator < BaseDecorator
   end
 
   def avg_notes(subject_item)
-    if subject_item.subject_item_notes.empty?
+    notes = subject_item.subject_item_notes.select { |note| note.student_id == student.id }
+    if notes.empty?
       return "0.00"
     else
       total = 0.0
-      subject_item.subject_item_notes.each do |item|
+      notes.each do |item|
         total += item.value
       end
-      total /= subject_item.subject_item_notes.length
+      total /= notes.length
 
       return sprintf( "%0.02f", total.round(2))
     end
