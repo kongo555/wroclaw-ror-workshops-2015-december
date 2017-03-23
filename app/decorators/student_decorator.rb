@@ -16,4 +16,12 @@ class StudentDecorator < BaseDecorator
       return sprintf( "%0.02f", total.round(2))
     end
   end
+
+  def birthday
+    if birthdate.present?
+      return birthdate.strftime('%Y-%m_%d')
+    else
+      return ""
+    end
+  end
 end
