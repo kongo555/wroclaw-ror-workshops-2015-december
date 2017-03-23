@@ -16,4 +16,5 @@
 #= require turbolinks
 #= require bootstrap-sprockets
 #= require bootstrap-datepicker
+#= require dataTables/jquery.dataTables
 #= require_tree .
